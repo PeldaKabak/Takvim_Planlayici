@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbTakvimProjeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tbl_program">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Day" Type="datetime" />
+    <Property Name="Starttime" Type="datetime" />
+    <Property Name="Eventtype" Type="varchar" MaxLength="20" />
+    <Property Name="Explanation" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tbl_Users">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="20" />
+    <Property Name="Username" Type="int" Nullable="false" />
+    <Property Name="Password" Type="int" />
+    <Property Name="TC" Type="char" MaxLength="11" />
+    <Property Name="Telephone" Type="char" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="40" />
+    <Property Name="Adrress" Type="varchar" MaxLength="50" />
+    <Property Name="Usertype" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityContainer Name="DbTakvimProjeModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_program" EntityType="Self.Tbl_program" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Users" EntityType="Self.Tbl_Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
